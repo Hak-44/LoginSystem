@@ -52,6 +52,15 @@ public class Main {
         Scanner input = new Scanner(System.in);
         System.out.print("Enter username: ");
         String usernameInput = input.nextLine();
+
+        /* while looping the result of usernameInput, if it's false then allow the user to re-enter a username
+            If it's true, then continue.
+         */
+        while (usernameInput.isBlank()){
+            System.out.print("[ERROR] - Username is required in order to proceed. Re-enter: ");
+            usernameInput = input.nextLine();
+        }
+
         System.out.print("Enter password: ");
         String passwordInput = input.nextLine();
 
