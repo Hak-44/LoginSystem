@@ -43,6 +43,11 @@ public class Main {
 
     }
 
+    public static boolean CheckForBlankInput(String input){
+        if(input.isBlank()) return false;
+        return true;
+    }
+
     // Login System
     public static void SendToLogin(){
         System.out.println("\n[PROCESS] - Loading login...");
@@ -56,7 +61,7 @@ public class Main {
         /* while looping the result of usernameInput, if it's false then allow the user to re-enter a username
             If it's true, then continue.
          */
-        while (usernameInput.isBlank()){
+        while (!CheckForBlankInput(usernameInput)){
             System.out.print("[ERROR] - Username is required in order to proceed. Re-enter: ");
             usernameInput = input.nextLine();
         }
