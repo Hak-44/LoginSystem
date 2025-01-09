@@ -7,14 +7,25 @@ import javafx.scene.control.Label;
 public class LoginController {
 
     @FXML
+    private Label loginPortal;
+
+    @FXML
     private Button loginBtn;
 
     @FXML
-    private Label loginPortal;
+    private Button backBtn;
+
+
 
     @FXML
     protected void onLoginButtonClick() {
         // validation
+
+    }
+
+    @FXML
+    protected void onBackButtonClick() {
+
 
     }
 

@@ -9,8 +9,10 @@ import java.io.IOException;
 
 public class StartApplication extends Application {
 
-    private Scene LoginScene;
-    private Scene HomeScene;
+    private FXMLLoader LoginLoader = new FXMLLoader(StartApplication.class.getResource("login-view.fxml"));
+    private FXMLLoader HomeLoader = new FXMLLoader(StartApplication.class.getResource("home-view.fxml"));
+    private FXMLLoader StartLoader = new FXMLLoader(StartApplication.class.getResource("start-view.fxml"));
+
     static Stage mainStage;
     static FXMLLoader fxmlLoader;
 
@@ -18,39 +20,33 @@ public class StartApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         mainStage = stage;
-        fxmlLoader = new FXMLLoader(StartApplication.class.getResource("start-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
-        InitScenes();
+        //fxmlLoader = new FXMLLoader(StartApplication.class.getResource("start-view.fxml"));
+        Scene startScene = new Scene(StartLoader.load(), 400.0, 300);
         mainStage.setTitle("Hello!");
-        mainStage.setScene(scene);
+        mainStage.setScene(startScene);
         mainStage.show();
     }
 
-    private void InitScenes() throws IOException {
-
-
-
-    }
 
     public static void main(String[] args) {
         launch();
     }
 
     public void SwitchToLoginWindow() throws IOException {
-        mainStage.hide();
-        fxmlLoader = new FXMLLoader(StartApplication.class.getResource("login-view.fxml"));
-        LoginScene = new Scene(fxmlLoader.load(), 320, 240);
+        //fxmlLoader = new FXMLLoader(StartApplication.class.getResource("login-view.fxml"));
+        Scene loginScene = new Scene(LoginLoader.load(), 400.0, 300);
         mainStage.setTitle("Login");
-        mainStage.setScene(LoginScene);
+        mainStage.setScene(loginScene);
         mainStage.show();
     }
 
     public void SwitchToHomeWindow() throws IOException {
-        mainStage.hide();
-        fxmlLoader = new FXMLLoader(StartApplication.class.getResource("home-view.fxml"));
-        HomeScene = new Scene(fxmlLoader.load(), 320, 240);
-        mainStage.setTitle("Login");
-        mainStage.setScene(HomeScene);
+
+        //fxmlLoader = new FXMLLoader(StartApplication.class.getResource("home-view.fxml"));
+        Scene homeScene = new Scene(HomeLoader.load(), 400.0, 300);
+        mainStage.setTitle("Home");
+        mainStage.setScene(homeScene);
         mainStage.show();
+
     }
 }
