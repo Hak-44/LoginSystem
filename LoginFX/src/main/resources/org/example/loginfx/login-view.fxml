@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox alignment="CENTER" prefHeight="185.0" prefWidth="255.0" spacing="20.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.loginfx.LoginController">
+<VBox alignment="CENTER" prefHeight="450.0" prefWidth="270.0" spacing="20.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.loginfx.LoginController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
@@ -16,10 +16,10 @@
          <Font size="20.0" />
       </font></Label>
    <Label text="Username" />
-   <TextField fx:id="usernameField"/>
+   <TextField fx:id="usernameField" />
 
     <Label fx:id="loginPortal" text="Password" />
-   <PasswordField fx:id="passwordField"/>
+   <PasswordField fx:id="passwordField" />
    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
       <children>
           <Button fx:id="loginBtn" onAction="#onLoginButtonClick" text="Login" />

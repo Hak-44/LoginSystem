@@ -13,6 +13,9 @@ public class StartApplication extends Application {
     private FXMLLoader HomeLoader = new FXMLLoader(StartApplication.class.getResource("home-view.fxml"));
     private FXMLLoader StartLoader = new FXMLLoader(StartApplication.class.getResource("start-view.fxml"));
 
+    private double defaultWidth = 350.0;
+    private double defaultHeight = 500.0;
+
     static Stage mainStage;
 
 
@@ -21,6 +24,8 @@ public class StartApplication extends Application {
         mainStage = stage;
         //fxmlLoader = new FXMLLoader(StartApplication.class.getResource("start-view.fxml"));
         Scene startScene = new Scene(StartLoader.load(), 400.0, 300);
+        mainStage.setWidth(defaultWidth);
+        mainStage.setHeight(defaultHeight);
         mainStage.setTitle("Hello!");
         mainStage.setScene(startScene);
         mainStage.show();
