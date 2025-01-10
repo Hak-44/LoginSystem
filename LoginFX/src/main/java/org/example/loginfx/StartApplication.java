@@ -14,7 +14,6 @@ public class StartApplication extends Application {
     private FXMLLoader StartLoader = new FXMLLoader(StartApplication.class.getResource("start-view.fxml"));
 
     static Stage mainStage;
-    static FXMLLoader fxmlLoader;
 
 
     @Override
@@ -46,6 +45,15 @@ public class StartApplication extends Application {
         Scene homeScene = new Scene(HomeLoader.load(), 400.0, 300);
         mainStage.setTitle("Home");
         mainStage.setScene(homeScene);
+        mainStage.show();
+
+    }
+
+    public void SwitchBackToStartWindow() throws IOException {
+
+        Scene startScene = new Scene(StartLoader.load(), 400.0, 300);
+        mainStage.setTitle("Start");
+        mainStage.setScene(startScene);
         mainStage.show();
 
     }
