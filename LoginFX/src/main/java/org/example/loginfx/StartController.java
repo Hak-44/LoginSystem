@@ -10,6 +10,11 @@ public class StartController extends StartApplication{
     @FXML
     private Label infoMessage;
 
+
+    public static void main(String[] args) {
+        System.out.println("Hello World");
+    }
+
     @FXML
     protected void onGoToLoginButtonClick() throws IOException {
         // go to log in scene

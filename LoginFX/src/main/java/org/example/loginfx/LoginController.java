@@ -26,7 +26,7 @@ public class LoginController extends StartApplication{
 
 
     @FXML
-    protected void onLoginButtonClick() {
+    protected void onLoginButtonClick() throws IOException {
         ValidateFields();
 
     }
@@ -36,7 +36,7 @@ public class LoginController extends StartApplication{
         SwitchBackToStartWindow();
     }
 
-    private void ValidateFields() {
+    private void ValidateFields() throws IOException {
         String usernameInput = usernameField.getText();
         String passwordInput = passwordField.getText();
 
@@ -49,7 +49,7 @@ public class LoginController extends StartApplication{
 
     }
 
-    private void ValidatePassword(String usernameInput, String passwordInput) {
+    private void ValidatePassword(String usernameInput, String passwordInput) throws IOException {
         boolean hasFoundMatch = false;  // this boolean is used to check if the passing is valid
 
         for(int i = 0; i < AllAcounts.nameArray.length; i++){
@@ -61,7 +61,7 @@ public class LoginController extends StartApplication{
                 System.out.println("\n[SYSTEM] - Welcome, "+ user.getUsername() + ".");
                 usernameField.setStyle("-fx-background-color: #a8f1a0");
                 passwordField.setStyle("-fx-background-color: #a5f1a0");
-
+                SwitchToHomeWindow(user);
             }
 
         }

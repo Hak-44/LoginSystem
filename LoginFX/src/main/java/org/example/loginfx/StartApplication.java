@@ -3,6 +3,7 @@ package org.example.loginfx;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -45,15 +46,37 @@ public class StartApplication extends Application {
         mainStage.show();
     }
 
-    public void SwitchToHomeWindow() throws IOException {
+    public void SwitchToHomeWindow(User user) throws IOException {
 
         //fxmlLoader = new FXMLLoader(StartApplication.class.getResource("home-view.fxml"));
         Scene homeScene = new Scene(HomeLoader.load(), 400.0, 300);
+
+
+
+        SetupUserDetails(user);
         mainStage.setTitle("Home");
         mainStage.setScene(homeScene);
         mainStage.show();
 
     }
+
+    private void SetupUserDetails(User user) {
+        HomeController homeCon = HomeLoader.getController();
+        homeCon.userName.setText(user.getName());
+
+        Text text = new Text("UserID: "+user.getID());
+        homeCon.profileFlow.getChildren().add(text);
+
+        Text text2 = new Text("\n\nBio: "+user.getBio());
+        homeCon.profileFlow.getChildren().add(text2);
+
+        Text text3 = new Text("\n\nAccount Privileges: "+user.getType());
+        homeCon.profileFlow.getChildren().add(text3);
+
+        //homeCon.prototypeFlow.getChildren().add(text);
+
+    }
+
 
     public void SwitchBackToStartWindow() throws IOException {
 

@@ -1,16 +1,34 @@
 package org.example.loginfx;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
+import javafx.scene.text.TextFlow;
 
 public class HomeController {
 
-    @FXML
-    private Label userName;
+    static User user;
 
     @FXML
-    public void onExitButtonClick() {
-        // close or log out
+    public ImageView imageView;
+
+    @FXML
+    public TextFlow profileFlow;
+
+    @FXML
+    public Button exitBtn;
+
+    @FXML
+    public Label userName;
+    public TextFlow prototypeFlow;
+
+
+    @FXML
+    private void onExitButtonClick() {
+        userName.setText("");
     }
+
+
+
 }
