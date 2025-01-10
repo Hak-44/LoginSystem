@@ -16,16 +16,26 @@
           <Label fx:id="userName" />
          <ImageView fx:id="imageView" fitHeight="160.0" fitWidth="160.0" pickOnBounds="true" preserveRatio="true" />
          <Label text="Profile" />
-         <TextFlow fx:id="profileFlow" prefHeight="200.0" prefWidth="200.0" />
+         <ScrollPane hmax="3.0" prefHeight="200.0" prefWidth="200.0" vmax="3.0">
+            <content>
+               <TextFlow fx:id="profileFlow" prefHeight="200.0" prefWidth="200.0" />
+            </content>
+         </ScrollPane>
           <Button fx:id="exitBtn" onAction="#onExitButtonClick" text="Logout" />
       </children>
    </VBox>
    <HBox prefHeight="100.0" prefWidth="200.0">
       <children>
-         <Label text="Prototypes">
-            <graphic>
-               <TextFlow fx:id="prototypeFlow" prefHeight="200.0" prefWidth="200.0" />
-            </graphic></Label>
+         <VBox prefHeight="200.0" prefWidth="100.0">
+            <children>
+               <Label text="Prototypes" />
+               <ScrollPane prefHeight="200.0" prefWidth="200.0">
+                  <content>
+                     <TextFlow fx:id="prototypeFlow" prefHeight="200.0" prefWidth="200.0" />
+                  </content>
+               </ScrollPane>
+            </children>
+         </VBox>
       </children>
    </HBox>
 

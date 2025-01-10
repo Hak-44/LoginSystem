@@ -3,10 +3,14 @@ package org.example.loginfx;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
 
 public class StartApplication extends Application {
 
@@ -72,6 +76,9 @@ public class StartApplication extends Application {
 
         Text text3 = new Text("\n\nAccount Privileges: "+user.getType());
         homeCon.profileFlow.getChildren().add(text3);
+
+        Image image = new Image(getClass().getResource("/images/" +user.getImage()).toString());
+        homeCon.imageView.setImage(image);
 
         //homeCon.prototypeFlow.getChildren().add(text);
 
