@@ -37,20 +37,39 @@ public class LoginController extends StartApplication{
     }
 
     private void ValidateFields() {
-        String username = usernameField.getText();
-        String password = passwordField.getText();
+        String usernameInput = usernameField.getText();
+        String passwordInput = passwordField.getText();
 
-        if (!username.isBlank()){
-            // set the value to something
+        if (usernameInput.isBlank()){
+            usernameField.setStyle("-fx-background-color: #f1eda0");
 
         }else{
-            ValidatePassword();
+            ValidatePassword(usernameInput, passwordInput);
         }
 
     }
 
-    private void ValidatePassword() {
+    private void ValidatePassword(String usernameInput, String passwordInput) {
+        boolean hasFoundMatch = false;  // this boolean is used to check if the passing is valid
 
+        for(int i = 0; i < AllAcounts.nameArray.length; i++){
+
+            // .tolowerCase converts both retrieved strings from the class and user inputs to lowercase, which prevents case sensitivity
+            if(AllAcounts.nameArray[i].getUsername().toLowerCase().equals(usernameInput.toLowerCase()) && AllAcounts.nameArray[i].getPassword().equals(passwordInput)){
+                hasFoundMatch = true;   // switches to true when a match is found
+                User user = AllAcounts.nameArray[i];   // creates a class that will reference the matching username in the database.
+                System.out.println("\n[SYSTEM] - Welcome, "+ user.getUsername() + ".");
+                usernameField.setStyle("-fx-background-color: #a8f1a0");
+                passwordField.setStyle("-fx-background-color: #a5f1a0");
+
+            }
+
+        }
+        // if the boolean still reads false, it will send this "error", message
+        if(!hasFoundMatch){
+            usernameField.setStyle("-fx-background-color: #f1a0a0");
+            passwordField.setStyle("-fx-background-color: #f1a0a0");
+        }
     }
 
 }

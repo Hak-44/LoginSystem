@@ -31,8 +31,9 @@ public class StartApplication extends Application {
         mainStage.show();
     }
 
-
+    // since this is where the program starts, it's best to initialise and run functions here before launching
     public static void main(String[] args) {
+        AllAcounts.CreateSampleLogins();    // generating the classes
         launch();
     }
 
