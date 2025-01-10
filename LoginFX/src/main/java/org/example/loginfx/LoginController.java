@@ -40,8 +40,16 @@ public class LoginController extends StartApplication{
         String username = usernameField.getText();
         String password = passwordField.getText();
 
+        if (!username.isBlank()){
+            // set the value to something
 
+        }else{
+            ValidatePassword();
+        }
 
+    }
+
+    private void ValidatePassword() {
 
     }
 
